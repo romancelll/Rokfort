@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RokFort Advisory - Strategic & Corporate Development</title>
+    <meta name="description" content="Partial strategic advisory and corporate development for growth companies. Financial modelling, investor presentations, NI 43-101 expertise.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #2c4a3e;
+            --accent: #8b6f47;
+            --cream: #f8f6f1;
+            --light-gray: #e8e4dc;
+            --medium-gray: #6b6b6b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--cream);
+            color: var(--primary);
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2.5rem;
+        }
+
+        /* Header */
+        header {
+            padding: 2rem 0;
+            background: rgba(248, 246, 241, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 70px;
+            width: auto;
+        }
+
+        .back-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding: 0.6rem 1.5rem;
+            border: 1px solid var(--light-gray);
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 6rem 0;
+            text-align: center;
+            background: linear-gradient(165deg, #f8f6f1 0%, #ebe7dc 100%);
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--medium-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Profile Section */
+        .profile-section {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .profile-container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 4rem;
+            align-items: start;
+        }
+
+        .profile-image-placeholder {
+            width: 100%;
+            aspect-ratio: 1;
+            background: linear-gradient(135deg, var(--light-gray) 0%, #ddd6c8 100%);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            color: var(--medium-gray);
+            border: 2px dashed rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-content h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .profile-text {
+            color: var(--medium-gray);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            font-size: 1rem;
+        }
+
+        .edit-note {
+            font-size: 0.85rem;
+            color: var(--accent);
+            font-style: italic;
+            margin-top: 2rem;
+            padding: 1rem;
+            background: rgba(139, 111, 71, 0.05);
+            border-left: 3px solid var(--accent);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 0;
+            background: var(--cream);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            font-size: 0.85rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+        }
+
+        .service-card {
+            padding: 3rem 2.5rem;
+            background: white;
+            border-top: 3px solid var(--secondary);
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .service-card p {
+            color: var(--medium-gray);
+            line-height: 1.7;
+        }
+
+        /* Target Clients */
+        .target-clients {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .client-card {
+            padding: 2.5rem;
+            background: var(--cream);
+            border-left: 3px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        .client-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .client-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .client-card p {
+            color: var(--medium-gray);
+            line-height: 1.7;
+        }
+
+        /* Contact CTA */
+        .contact-cta {
+            padding: 6rem 0;
+            background: var(--secondary);
+            color: white;
+            text-align: center;
+        }
+
+        .contact-cta h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .contact-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+        }
+
+        .contact-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 1rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            padding: 2.5rem 0;
+            background: var(--primary);
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .services-grid,
+            .clients-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .profile-image-placeholder {
+                max-width: 300px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .logo-img {
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <img src="../advisory-logo.png" alt="RokFort Advisory" class="logo-img">
+                <a href="../index.html" class="back-link">← Back to RokFort</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>Strategic Advisory &<br>Corporate Development</h1>
+            <p class="hero-subtitle">Partial strategic advisory and corporate development for growth companies navigating complex financial landscapes.</p>
+        </div>
+    </section>
+
+    <section class="profile-section">
+        <div class="container">
+            <div class="profile-container">
+                <div class="profile-image-placeholder">
+                    [Your Photo Here]
+                </div>
+                <div class="profile-content">
+                    <h2>Roman Celac, CFA</h2>
+                    <p class="profile-text">
+                        With experience spanning corporate development at a publicly traded mining company and financial advisory across multiple sectors, I bring institutional-grade expertise to companies navigating growth, financing, and strategic transitions.
+                    </p>
+                    <p class="profile-text">
+                        I've evaluated transactions from $50M to $4B+, supported $1.7B+ in financings, and led cross-functional teams through complex M&A processes. My advisory work focuses on delivering the rigor of a CFO or corporate development function without the full-time commitment.
+                    </p>
+                    <p class="profile-text">
+                        [Edit this section with your personalized bio and approach]
+                    </p>
+                    <div class="edit-note">
+                        📝 Note: This profile section is ready for you to customize with your specific messaging, credentials, and approach to advisory work.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Services</div>
+                <h2 class="section-title">What We Deliver</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <span class="service-icon">📊</span>
+                    <h3>Financial Modelling</h3>
+                    <p>Complex financial models for mining projects (NI 43-101 compliant), M&A scenarios, capital structures, and strategic planning. Built for institutional scrutiny and board-level decision making.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">📈</span>
+                    <h3>Investor Relations</h3>
+                    <p>Investor presentations, roadshow materials, quarterly reporting packages, and capital markets positioning. Translating technical operations into compelling investment narratives.</p>
+                </div>
+                <div class="service-card">
+                    <span class="service-icon">🎯</span>
+                    <h3>Corporate Development</h3>
+                    <p>M&A execution support, transaction structuring, due diligence coordination, and strategic planning. Bringing buy-side and sell-side experience to complex deals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="target-clients">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Who We Work With</div>
+                <h2 class="section-title">Target Clients</h2>
+            </div>
+            <div class="clients-grid">
+                <div class="client-card">
+                    <h3>Mining Companies</h3>
+                    <p>Junior to mid-tier mining companies requiring NI 43-101 financial models, investor presentations, capital raises, or M&A support. Deep understanding of the mining value chain and capital markets.</p>
+                </div>
+                <div class="client-card">
+                    <h3>Private Equity</h3>
+                    <p>PE firms and portfolio companies needing transaction support, financial modeling for acquisitions, or strategic planning during hold periods. Experienced with institutional diligence standards.</p>
+                </div>
+                <div class="client-card">
+                    <h3>Independent Transactions</h3>
+                    <p>Founders, family offices, or independent boards requiring advisory on specific transactions, strategic reviews, or capital structure optimization. Objective analysis without ongoing commitments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-cta">
+        <div class="container">
+            <h2>Let's Discuss Your Project</h2>
+            <p>Available for advisory mandates and project-based engagements.</p>
+            <a href="mailto:roman@rokfort.com" class="contact-button">Get in Touch</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 RokFort Advisory. All engagements subject to confidentiality agreements.</p>
+        </div>
+    </footer>
+</body>
+</html>

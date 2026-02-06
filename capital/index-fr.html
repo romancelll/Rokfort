@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RokFort Capital - Bâtir sur ce que vous avez construit</title>
+    <meta name="description" content="Firme d'investissement dirigée par un opérateur acquérant une entreprise québécoise exceptionnelle. Engagement à long terme, pas d'ingénierie financière.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #2c4a3e;
+            --accent: #8b6f47;
+            --cream: #f8f6f1;
+            --light-gray: #e8e4dc;
+            --medium-gray: #6b6b6b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--cream);
+            color: var(--primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2.5rem;
+        }
+
+        /* Header */
+        header {
+            padding: 2rem 0;
+            background: rgba(248, 246, 241, 0.98);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-img {
+            height: 60px;
+            width: auto;
+        }
+
+        .header-right {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .contact-link {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .contact-link:hover {
+            color: var(--accent);
+        }
+
+        .lang-switcher {
+            padding: 0.6rem 1.2rem;
+            background: white;
+            border: 1px solid var(--light-gray);
+            border-radius: 4px;
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+
+        .lang-switcher:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 0 7rem;
+            background: linear-gradient(165deg, #f8f6f1 0%, #ebe7dc 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(139, 111, 71, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+        }
+
+        .hero-label {
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            line-height: 1.15;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease-out 0.1s both;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--medium-gray);
+            line-height: 1.7;
+            margin-bottom: 3rem;
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--secondary);
+            color: white;
+            padding: 1.1rem 3rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 20px rgba(44, 74, 62, 0.2);
+            animation: fadeInUp 0.8s ease-out 0.3s both;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(44, 74, 62, 0.3);
+            background: #234136;
+        }
+
+        /* Philosophy Section */
+        .philosophy {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-label {
+            font-size: 0.85rem;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            line-height: 1.3;
+            color: var(--primary);
+            font-weight: 600;
+        }
+
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .philosophy-item {
+            padding: 3rem;
+            background: var(--cream);
+            border-left: 4px solid var(--accent);
+            transition: transform 0.3s ease;
+        }
+
+        .philosophy-item:hover {
+            transform: translateX(5px);
+        }
+
+        .philosophy-item h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .philosophy-item p {
+            color: var(--medium-gray);
+            line-height: 1.8;
+        }
+
+        /* Process Section */
+        .process {
+            padding: 6rem 0;
+            background: var(--secondary);
+            color: white;
+            position: relative;
+        }
+
+        .process::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+        }
+
+        .process .section-title {
+            color: white;
+        }
+
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+            position: relative;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 30px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.2);
+            z-index: 0;
+        }
+
+        .process-step {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .process-number {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 1.5rem;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .process-step h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
+        }
+
+        .process-step p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* What We Bring Section */
+        .value-proposition {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .value-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+
+        .value-card {
+            padding: 3rem 2rem;
+            background: var(--cream);
+            border-top: 3px solid var(--secondary);
+            transition: all 0.3s ease;
+        }
+
+        .value-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .value-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .value-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .value-card p {
+            color: var(--medium-gray);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* Target Business Section */
+        .target-business {
+            padding: 6rem 0;
+            background: linear-gradient(165deg, #f8f6f1 0%, #ebe7dc 100%);
+        }
+
+        .criteria-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2.5rem;
+            margin-top: 4rem;
+        }
+
+        .criteria-item {
+            padding: 2.5rem;
+            background: white;
+            border-left: 3px solid var(--accent);
+            transition: all 0.3s ease;
+        }
+
+        .criteria-item:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transform: translateX(5px);
+        }
+
+        .criteria-item h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.4rem;
+            color: var(--secondary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .criteria-item p {
+            color: var(--medium-gray);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+
+        /* Track Record Section */
+        .track-record {
+            padding: 6rem 0;
+            background: var(--primary);
+            color: white;
+            text-align: center;
+        }
+
+        .track-record .section-title {
+            color: white;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4rem;
+            margin-top: 4rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .stat {
+            border-top: 3px solid var(--accent);
+            padding-top: 2rem;
+        }
+
+        .stat-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            line-height: 1.5;
+        }
+
+        /* Final CTA Section */
+        .final-cta {
+            padding: 7rem 0;
+            background: white;
+            text-align: center;
+        }
+
+        .final-cta-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.2rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .final-cta-text {
+            font-size: 1.2rem;
+            color: var(--medium-gray);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .final-cta-subtext {
+            font-size: 1rem;
+            color: var(--medium-gray);
+            font-style: italic;
+            margin-bottom: 3rem;
+        }
+
+        .contact-methods {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            margin-top: 3rem;
+        }
+
+        .contact-method {
+            padding: 2rem 3rem;
+            background: var(--cream);
+            border: 2px solid var(--light-gray);
+            border-radius: 4px;
+            text-decoration: none;
+            color: var(--primary);
+            transition: all 0.3s ease;
+            min-width: 250px;
+        }
+
+        .contact-method:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-method-label {
+            font-size: 0.85rem;
+            color: var(--medium-gray);
+            margin-bottom: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .contact-method-value {
+            font-weight: 600;
+            font-size: 1.15rem;
+            color: var(--secondary);
+        }
+
+        /* Footer */
+        footer {
+            padding: 3rem 0;
+            background: var(--primary);
+            color: rgba(255, 255, 255, 0.7);
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .philosophy-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .value-grid,
+            .criteria-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .process-timeline {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .process-timeline::before {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .contact-methods {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .header-right {
+                display: none;
+            }
+
+            .logo-img {
+                height: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="20260206_RokfortCapital.png" alt="RokFort Capital" class="logo-img">
+                </div>
+                <div class="header-right">
+                    <a href="tel:+14388217606" class="contact-link">+1 (438) 821-7606</a>
+                    <a href="/cdn-cgi/l/email-protection#ed8e88818c8e9f82808c83ad8a808c8481c38e8280" class="contact-link"><span class="__cf_email__" data-cfemail="1d7e78717c7e6f72707c735d7a707c7471337e7270">[email&#160;protected]</span></a>
+                    <a href="rokfort-index.html" class="lang-switcher">English</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-label">Investissement dirigé par un opérateur</div>
+                <h1>Bâtir sur ce que<br>vous avez construit</h1>
+                <p class="hero-subtitle">Nous nous associons directement aux fondateurs d'entreprises québécoises exceptionnelles pour préserver l'héritage, honorer la culture et créer une valeur durable. Une entreprise. Engagement à long terme.</p>
+                <a href="#contact" class="cta-button">Démarrer une conversation confidentielle</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="philosophy">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Notre approche</div>
+                <h2 class="section-title">Nous ne sommes pas du capital-investissement</h2>
+            </div>
+            <div class="philosophy-grid">
+                <div class="philosophy-item">
+                    <h3>Opérateurs à long terme</h3>
+                    <p>Nous avons l'intention de posséder et d'exploiter l'entreprise que nous acquérons—pas de la vendre dans trois à cinq ans. Il s'agit de bâtir quelque chose de durable, non de fabriquer une sortie pour le prochain acheteur.</p>
+                </div>
+                <div class="philosophy-item">
+                    <h3>Partenariat direct</h3>
+                    <p>Pas de courtiers. Pas d'enchères. Pas d'offres concurrentes conçues pour extraire des concessions. Juste une conversation confidentielle et respectueuse pour savoir si nous sommes le bon gardien à long terme de ce que vous avez construit.</p>
+                </div>
+                <div class="philosophy-item">
+                    <h3>Au-delà du bilan</h3>
+                    <p>Vos employés, vos clients et votre réputation comptent. Nous évaluons la culture et la continuité parallèlement à la performance financière. Ce que vous avez construit mérite d'être préservé et renforcé.</p>
+                </div>
+                <div class="philosophy-item">
+                    <h3>Enraciné au Québec, axé localement</h3>
+                    <p>Nous nous engageons à maintenir les opérations, les emplois et la création de valeur au Québec. Nous comprenons l'écosystème d'affaires local, le paysage du financement et les relations communautaires qui font prospérer votre entreprise.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="process">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label" style="color: rgba(255,255,255,0.7);">Comment nous travaillons</div>
+                <h2 class="section-title">Un processus clair et respectueux</h2>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="process-number">1</div>
+                    <h3>Appel initial</h3>
+                    <p>Une conversation informelle de 30 minutes pour comprendre vos objectifs et voir si nous sommes un bon match. Sans pression, sans obligation.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">2</div>
+                    <h3>ENC et révision</h3>
+                    <p>Nous signons une entente de non-divulgation, examinons les états financiers de base et présentons une lettre d'intention avec une évaluation juste basée sur le marché.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">3</div>
+                    <h3>Vérification diligente</h3>
+                    <p>Sur 60 jours, nous vérifions les détails ensemble, rencontrons votre équipe et planifions une transition harmonieuse qui honore votre héritage.</p>
+                </div>
+                <div class="process-step">
+                    <div class="process-number">4</div>
+                    <h3>Clôture et transition</h3>
+                    <p>Les fonds sont virés et nous célébrons la transition réussie. Votre entreprise se poursuit sous une gestion engagée et compétente.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="value-proposition">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Ce que nous apportons</div>
+                <h2 class="section-title">Expertise financière et excellence opérationnelle</h2>
+            </div>
+            <div class="value-grid">
+                <div class="value-card">
+                    <span class="value-icon">📊</span>
+                    <h3>Expérience transactionnelle</h3>
+                    <p>Évalué des transactions de 50M$ à 4G$+ dans une société cotée en bourse. Détenteur du titre CFA avec une expertise approfondie en fusions-acquisitions, évaluation et finance corporative.</p>
+                </div>
+                <div class="value-card">
+                    <span class="value-icon">⚙️</span>
+                    <h3>Leadership opérationnel</h3>
+                    <p>Dirigé des équipes interfonctionnelles, établi des cadences opérationnelles et travaillé directement avec des dirigeants sur des initiatives stratégiques. Soutenu plus de 1,7G$ en financements.</p>
+                </div>
+                <div class="value-card">
+                    <span class="value-icon">🏛️</span>
+                    <h3>Gouvernance et stratégie</h3>
+                    <p>Expérience en préparation de conseils d'administration, planification stratégique et formation en gouvernance de l'Institut des Cadres du Québec. Rigueur institutionnelle sans bureaucratie.</p>
+                </div>
+                <div class="value-card">
+                    <span class="value-icon">💰</span>
+                    <h3>Accès au capital</h3>
+                    <p>Connexions profondes à l'écosystème de financement québécois—FTEQ, BDC, fonds régionaux et investisseurs institutionnels. Accès au capital de croissance quand votre entreprise en a besoin.</p>
+                </div>
+                <div class="value-card">
+                    <span class="value-icon">🌱</span>
+                    <h3>Mentalité de croissance</h3>
+                    <p>Nous identifions les améliorations opérationnelles, les investissements stratégiques et les opportunités d'expansion de marché qui libèrent la valeur tout en préservant ce qui rend votre entreprise spéciale.</p>
+                </div>
+                <div class="value-card">
+                    <span class="value-icon">🤝</span>
+                    <h3>Engagement local</h3>
+                    <p>Dévoué à maintenir les emplois, les opérations et les relations avec les fournisseurs au Québec. Nous bâtissons pour des générations, pas pour des trimestres.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="target-business">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Profil ciblé</div>
+                <h2 class="section-title">La bonne entreprise à développer ensemble</h2>
+            </div>
+            <div class="criteria-grid">
+                <div class="criteria-item">
+                    <h3>Établie et rentable</h3>
+                    <p>Entreprises avec des opérations éprouvées, des fondations solides et des voies de croissance claires. Typiquement 2M$ à 20M$+ de revenus avec rentabilité constante.</p>
+                </div>
+                <div class="criteria-item">
+                    <h3>Fondateur prêt à transitionner</h3>
+                    <p>Que vous preniez votre retraite, poursuiviez de nouvelles entreprises ou cherchiez un partenaire pour croître—nous honorons ce que vous avez construit.</p>
+                </div>
+                <div class="criteria-item">
+                    <h3>Opportunité de croissance</h3>
+                    <p>Entreprises où les améliorations opérationnelles, les investissements stratégiques ou l'expansion de marché peuvent libérer une valeur significative.</p>
+                </div>
+                <div class="criteria-item">
+                    <h3>Secteurs d'intérêt</h3>
+                    <p>Fabrication, industriel, services aux entreprises, distribution spécialisée, actifs réels. Ouvert aux opportunités avec des fondamentaux solides.</p>
+                </div>
+                <div class="criteria-item">
+                    <h3>Opérations au Québec</h3>
+                    <p>Principalement concentré sur les entreprises québécoises avec des racines locales profondes, des liens communautaires forts et des opérations que nous pouvons soutenir directement.</p>
+                </div>
+                <div class="criteria-item">
+                    <h3>Culture et équipe fortes</h3>
+                    <p>Entreprises avec des équipes de qualité, de solides relations clients et des valeurs qui méritent d'être préservées pendant notre croissance commune.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="track-record">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label" style="color: rgba(255,255,255,0.7);">Bilan éprouvé</div>
+                <h2 class="section-title">Une expérience qui compte</h2>
+            </div>
+            <div class="stats-grid">
+                <div class="stat">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Opportunités de transaction<br>évaluées et exécutées</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">1,7G$+</div>
+                    <div class="stat-label">Soutenus en<br>financements dette et capitaux</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">4G$</div>
+                    <div class="stat-label">Plus grande transaction<br>analysée et exécutée</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="final-cta" id="contact">
+        <div class="container">
+            <div class="final-cta-content">
+                <h2>Entamons une conversation</h2>
+                <p class="final-cta-text">Si vous êtes un propriétaire d'entreprise qui envisage son prochain chapitre, ou connaissez quelqu'un qui l'est, nous apprécierions sincèrement l'opportunité de discuter.</p>
+                <p class="final-cta-subtext">Toutes les conversations sont confidentielles et sans obligation.</p>
+                <div class="contact-methods">
+                    <a href="/cdn-cgi/l/email-protection#4023252c2123322f2d212e00272d21292c6e232f2d" class="contact-method">
+                        <div class="contact-method-label">Courriel</div>
+                        <div class="contact-method-value"><span class="__cf_email__" data-cfemail="3a595f565b594855575b547a5d575b535614595557">[email&#160;protected]</span></div>
+                    </a>
+                    <a href="tel:+14388217606" class="contact-method">
+                        <div class="contact-method-label">Téléphone</div>
+                        <div class="contact-method-value">+1 (438) 821-7606</div>
+                    </

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RokFort</title>
+    <meta name="description" content="RokFort - Capital and Advisory Services">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: #0a0a0a;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .logo-container {
+            margin-bottom: 4rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .logo {
+            width: 200px;
+            height: auto;
+            opacity: 0.95;
+        }
+
+        .divisions-container {
+            display: flex;
+            gap: 3rem;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+
+        .division-box {
+            position: relative;
+            width: 280px;
+            height: 140px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            color: white;
+            overflow: hidden;
+        }
+
+        .division-box::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .division-box:hover::before {
+            opacity: 1;
+        }
+
+        .division-box:hover {
+            transform: translateY(-8px);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 20px 60px rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .division-box::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .division-box:hover::after {
+            transform: scaleX(1);
+        }
+
+        .division-text {
+            font-size: 2rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            position: relative;
+            z-index: 1;
+        }
+
+        .contact-info {
+            position: absolute;
+            bottom: 2rem;
+            font-size: 0.9rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.5);
+            animation: fadeIn 1s ease-out 0.6s both;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .logo {
+                width: 150px;
+            }
+
+            .divisions-container {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .division-box {
+                width: 250px;
+                height: 120px;
+            }
+
+            .division-text {
+                font-size: 1.6rem;
+            }
+
+            .contact-info {
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <img src="rokfort-capital-logo.png" alt="RokFort" class="logo">
+    </div>
+
+    <div class="divisions-container">
+        <a href="capital/index.html" class="division-box">
+            <span class="division-text">Capital</span>
+        </a>
+        <a href="advisory/index.html" class="division-box">
+            <span class="division-text">Advisory</span>
+        </a>
+    </div>
+
+    <div class="contact-info">
+        roman@rokfort.com
+    </div>
+</body>
+</html>
