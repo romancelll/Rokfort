@@ -101,22 +101,9 @@
 
         .profile-container {
             display: grid;
-            grid-template-columns: 300px 1fr;
+            grid-template-columns: 1fr;
             gap: 4rem;
             align-items: start;
-        }
-
-        .profile-image-placeholder {
-            width: 100%;
-            aspect-ratio: 1;
-            background: linear-gradient(135deg, var(--light-gray) 0%, #ddd6c8 100%);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1rem;
-            color: var(--medium-gray);
-            border: 2px dashed rgba(0, 0, 0, 0.1);
         }
 
         .profile-content h2 {
@@ -132,16 +119,6 @@
             line-height: 1.8;
             margin-bottom: 1rem;
             font-size: 1rem;
-        }
-
-        .edit-note {
-            font-size: 0.85rem;
-            color: var(--accent);
-            font-style: italic;
-            margin-top: 2rem;
-            padding: 1rem;
-            background: rgba(139, 111, 71, 0.05);
-            border-left: 3px solid var(--accent);
         }
 
         /* Services Section */
@@ -216,7 +193,7 @@
 
         .clients-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             gap: 2.5rem;
             margin-top: 4rem;
         }
@@ -286,6 +263,38 @@
             box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
         }
 
+
+
+        .contact-details {
+            padding: 4rem 0;
+            background: white;
+            text-align: center;
+            border-top: 1px solid var(--light-gray);
+        }
+
+        .contact-details h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.2rem;
+            color: var(--secondary);
+            margin-bottom: 0.8rem;
+        }
+
+        .contact-details p {
+            color: var(--medium-gray);
+            margin-bottom: 1rem;
+        }
+
+        .contact-email {
+            color: var(--secondary);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1.05rem;
+        }
+
+        .contact-email:hover {
+            color: var(--accent);
+        }
+
         /* Footer */
         footer {
             padding: 2.5rem 0;
@@ -306,10 +315,6 @@
                 gap: 2rem;
             }
 
-            .profile-image-placeholder {
-                max-width: 300px;
-                margin: 0 auto;
-            }
         }
 
         @media (max-width: 768px) {
@@ -340,30 +345,21 @@
     <section class="hero">
         <div class="container">
             <h1>Strategic Advisory &<br>Corporate Development</h1>
-            <p class="hero-subtitle">Partial strategic advisory and corporate development for growth companies navigating complex financial landscapes.</p>
+            <p class="hero-subtitle">Rokfort Advisory is a team of seasoned professionals with diverse expertise across public and private markets. We’ve worked at the highest levels in advisory, banking and corporate environments, helping public, private, and PE-backed companies tackle their most strategic priorities in finance, valuation and strategy. You get the same institutional-grade expertise without the layers applied quickly and cost efficiently to your most critical projects.</p>
         </div>
     </section>
 
     <section class="profile-section">
         <div class="container">
             <div class="profile-container">
-                <div class="profile-image-placeholder">
-                    [Your Photo Here]
-                </div>
                 <div class="profile-content">
-                    <h2>Roman Celac, CFA</h2>
+                    <h2>Managing Partner, CFA</h2>
                     <p class="profile-text">
                         With experience spanning corporate development at a publicly traded mining company and financial advisory across multiple sectors, I bring institutional-grade expertise to companies navigating growth, financing, and strategic transitions.
                     </p>
                     <p class="profile-text">
                         I've evaluated transactions from $50M to $4B+, supported $1.7B+ in financings, and led cross-functional teams through complex M&A processes. My advisory work focuses on delivering the rigor of a CFO or corporate development function without the full-time commitment.
                     </p>
-                    <p class="profile-text">
-                        [Edit this section with your personalized bio and approach]
-                    </p>
-                    <div class="edit-note">
-                        📝 Note: This profile section is ready for you to customize with your specific messaging, credentials, and approach to advisory work.
-                    </div>
                 </div>
             </div>
         </div>
@@ -407,6 +403,10 @@
                     <p>Junior to mid-tier mining companies requiring NI 43-101 financial models, investor presentations, capital raises, or M&A support. Deep understanding of the mining value chain and capital markets.</p>
                 </div>
                 <div class="client-card">
+                    <h3>Public Companies</h3>
+                    <p>Public issuers that need ad-hoc support for strategic materials, management and board reviews, and staff augmentation across finance and corporate development functions.</p>
+                </div>
+                <div class="client-card">
                     <h3>Private Equity</h3>
                     <p>PE firms and portfolio companies needing transaction support, financial modeling for acquisitions, or strategic planning during hold periods. Experienced with institutional diligence standards.</p>
                 </div>
@@ -422,13 +422,22 @@
         <div class="container">
             <h2>Let's Discuss Your Project</h2>
             <p>Available for advisory mandates and project-based engagements.</p>
-            <a href="mailto:roman@rokfort.com" class="contact-button">Get in Touch</a>
+            <a href="#contact" class="contact-button">Get in Touch</a>
+        </div>
+    </section>
+
+
+    <section class="contact-details" id="contact">
+        <div class="container">
+            <h3>Contact</h3>
+            <p>For advisory mandates and project-based support:</p>
+            <a class="contact-email" href="mailto:advisory@rokfort.ca">advisory@rokfort.ca</a>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <p>&copy; 2026 RokFort Advisory. All engagements subject to confidentiality agreements.</p>
+            <p>&copy; 2026 RokFort Advisory. All engagements subject to confidentiality agreements. Contact: advisory@rokfort.ca.</p>
         </div>
     </footer>
 </body>

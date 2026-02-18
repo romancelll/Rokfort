@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | RokFort Advisory</title>
+    <meta name="description" content="Contact RokFort Advisory for strategic finance, valuation, and corporate development support.">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #2c4a3e;
+            --accent: #8b6f47;
+            --cream: #f8f6f1;
+            --medium-gray: #6b6b6b;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Montserrat', sans-serif; color: var(--primary); background: var(--cream); }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+        header { padding: 2rem 0; background: white; border-bottom: 1px solid rgba(0,0,0,0.08); }
+        .header-content { display: flex; justify-content: space-between; align-items: center; }
+        .logo-img { height: 58px; width: auto; }
+        .back-link { color: var(--secondary); text-decoration: none; font-weight: 600; }
+
+        .contact-page { padding: 6rem 0 7rem; text-align: center; }
+        .contact-page h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 4rem;
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        .contact-page .lead {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 2rem;
+            line-height: 1.45;
+            color: #4e5d71;
+            font-family: 'Cormorant Garamond', serif;
+        }
+        .subtext {
+            margin-top: 1.5rem;
+            font-style: italic;
+            color: var(--medium-gray);
+            font-size: 1.1rem;
+        }
+        .contact-card {
+            margin: 3.5rem auto 0;
+            background: white;
+            border: 1px solid rgba(0,0,0,0.1);
+            max-width: 420px;
+            padding: 2.2rem;
+        }
+        .contact-label {
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #5f6f82;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        .contact-email {
+            display: inline-block;
+            font-size: 2rem;
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer { padding: 2rem 0; text-align: center; background: var(--primary); color: rgba(255,255,255,0.75); }
+
+        @media (max-width: 768px) {
+            .contact-page h1 { font-size: 2.8rem; }
+            .contact-page .lead { font-size: 1.5rem; }
+            .contact-email { font-size: 1.6rem; }
+            .logo-img { height: 46px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <img src="../advisory-logo.png" alt="RokFort Advisory" class="logo-img">
+                <a href="index.html" class="back-link">← Back to Advisory</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="contact-page">
+        <div class="container">
+            <h1>Let's Start a Conversation</h1>
+            <p class="lead">If you're looking for support on high-priority finance, valuation, or strategy projects, we'd value the opportunity to connect.</p>
+            <p class="subtext">All conversations are confidential and without obligation.</p>
+
+            <div class="contact-card">
+                <div class="contact-label">Email</div>
+                <a class="contact-email" href="mailto:advisory@rokfort.ca">advisory@rokfort.ca</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 RokFort Advisory. All engagements subject to confidentiality agreements.</p>
+        </div>
+    </footer>
+</body>
+</html>
