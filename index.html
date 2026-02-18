@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RokFort</title>
-    <meta name="description" content="RokFort - Capital and Advisory Services">
+    <meta name="description" content="RokFort - Long-term buyer for Quebec business succession and strategic advisory">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
@@ -103,6 +103,51 @@
             z-index: 1;
         }
 
+        .division-box.primary {
+            width: 320px;
+            height: 160px;
+            border-color: rgba(255, 255, 255, 0.45);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 18px 45px rgba(255, 255, 255, 0.15);
+        }
+
+        .division-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            gap: 0.7rem;
+            align-items: center;
+            justify-content: center;
+            max-width: 90%;
+        }
+
+        .division-subtext {
+            font-size: 0.95rem;
+            letter-spacing: 0.6px;
+            text-transform: none;
+            color: rgba(255,255,255,0.8);
+            line-height: 1.35;
+        }
+
+        .helper-cta {
+            margin-top: 2rem;
+            color: rgba(255,255,255,0.95);
+            border: 1px solid rgba(255,255,255,0.35);
+            padding: 0.8rem 1.4rem;
+            text-decoration: none;
+            letter-spacing: 0.8px;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            animation: fadeIn 1s ease-out 0.45s both;
+        }
+
+        .helper-cta:hover {
+            background: rgba(255,255,255,0.08);
+            border-color: rgba(255,255,255,0.6);
+        }
+
         .contact-info {
             position: absolute;
             bottom: 2rem;
@@ -150,6 +195,15 @@
                 height: 120px;
             }
 
+            .division-box.primary {
+                width: 270px;
+                height: 130px;
+            }
+
+            .division-subtext {
+                font-size: 0.82rem;
+            }
+
             .division-text {
                 font-size: 1.6rem;
             }
@@ -166,16 +220,24 @@
     </div>
 
     <div class="divisions-container">
-        <a href="capital/index.html" class="division-box">
-            <span class="division-text">Capital</span>
+        <a href="capital/index.html" class="division-box primary">
+            <div class="division-content">
+                <span class="division-text">Capital</span>
+                <span class="division-subtext">For owners considering succession or transition</span>
+            </div>
         </a>
         <a href="advisory/index.html" class="division-box">
-            <span class="division-text">Advisory</span>
+            <div class="division-content">
+                <span class="division-text">Advisory</span>
+                <span class="division-subtext">For project-based strategic finance support</span>
+            </div>
         </a>
     </div>
 
+    <a href="capital/index.html" class="helper-cta">Business owner considering transition? Start here</a>
+
     <div class="contact-info">
-        roman@rokfort.com
+        contact@rokfort.com
     </div>
 </body>
 </html>
